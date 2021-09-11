@@ -4,5 +4,5 @@ Repositório destinado a execução e entrega dos trabalhos e atividades produzi
 
 
 [Trabalho 1: Desenvolvimento de um analisador léxico para a linguagem LA.](https://github.com/Donderileo/Compiladores/tree/main/lexico-la)
-
+[Trabalho 2: Desenvolvimento de um analisador sintatico para a linguagem LA.](https://github.com/Donderileo/Compiladores/tree/main/la-sintatico)
 
