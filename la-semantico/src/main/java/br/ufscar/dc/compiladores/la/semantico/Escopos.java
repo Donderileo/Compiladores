@@ -4,7 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Escopos {
-    private LinkedList<TabelaDeSimbolos> pilhaDeTabelas;
+
+    private final LinkedList<TabelaDeSimbolos> pilhaDeTabelas;
     
     public Escopos(){
         pilhaDeTabelas = new LinkedList<>();

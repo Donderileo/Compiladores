@@ -3,7 +3,6 @@ package br.ufscar.dc.compiladores.la.semantico;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TabelaDeSimbolos {
     
@@ -39,7 +38,7 @@ public class TabelaDeSimbolos {
         
     }
     
-    private final Map<String, EntradaTabelaDeSimbolos> tabela; 
+    private final HashMap<String, EntradaTabelaDeSimbolos> tabela; 
     
     public TabelaDeSimbolos(){
         this.tabela = new HashMap<>();
