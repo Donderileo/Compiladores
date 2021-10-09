@@ -149,7 +149,7 @@ cmdEnquanto: 'enquanto' expressao 'faca' cmd* 'fim_enquanto';
 
 cmdFaca: 'faca' cmd* 'ate' expressao;
 
-cmdAtribuicao: '^'? identificador '<-' expressao;
+cmdAtribuicao: (ponteiro='^')? identificador '<-' expressao;
 
 cmdChamada: IDENT '(' expressao (',' expressao)* ')';
 
@@ -185,7 +185,8 @@ parcela_unario: '^'? identificador
                 | NUM_REAL
                 | '(' parcelaUnarioExp=expressao ')';
 
-parcela_nao_unario: '&' identificador | CADEIA;
+parcela_nao_unario: endereco='&' identificador 
+                    | CADEIA;
 
 exp_relacional: exp_aritmetica (op_relacional exp_aritmetica)?;
 
