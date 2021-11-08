@@ -188,6 +188,8 @@ public class GeradorC extends LaBaseVisitor<Void> {
     @SuppressWarnings("empty-statement")
     public Void visitVariavel(LaParser.VariavelContext ctx) {
         
+        TabelaDeSimbolos escopoAtual = escopos.obterEscopoAtual();
+        
         if(ctx.tipo().tipo_estendido() != null){
             boolean e_ponteiro = ctx.tipo().tipo_estendido().ponteiro != null;
             
@@ -204,15 +206,15 @@ public class GeradorC extends LaBaseVisitor<Void> {
                                 escopoAtual.add(IDENT, escopoAtual.getTipo(tipoIDENT), e_ponteiro);
                                 break;
                             case "real":
-                                saida.append("float " + "*") + ident_ctx.getText() + ";\n");
+                                saida.append("float " + "*" + ident_ctx.getText() + ";\n");
                                 escopoAtual.add(IDENT, escopoAtual.getTipo(tipoIDENT), e_ponteiro);
                                 break;
                             case "literal":
-                                saida.append("char " + "*") + ident_ctx.getText() + "[80];\n");
+                                saida.append("char " + "*" + ident_ctx.getText() + "[80];\n");
                                 escopoAtual.add(IDENT, escopoAtual.getTipo(tipoIDENT), e_ponteiro);
                                 break;  
                             case "logico":
-                                saida.append("int " + "*") + ident_ctx.getText() + ";\n");
+                                saida.append("int " + "*" + ident_ctx.getText() + ";\n");
                                 escopoAtual.add(IDENT, escopoAtual.getTipo(tipoIDENT), e_ponteiro);
                                 break;  
                         } 
