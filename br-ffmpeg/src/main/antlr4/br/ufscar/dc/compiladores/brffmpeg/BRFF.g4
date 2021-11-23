@@ -1,4 +1,4 @@
-lexer grammar BRFF;
+grammar BRFF;
 
 WS: ( ' ' | '\t' | '\r' | '\n' ) -> skip;
 
@@ -23,3 +23,17 @@ COMENTARIO: '//' ( ~('\n'|'\r') )*? ('\n'|'\r') -> skip;
 CADEIA_NAO_FECHADA: ('\'') ~('\'')*? ('\n'|'\r');
 ERRO: .; 
 
+/* Sintatico */
+
+programa: in out modify* EOF;
+in: ENTRADA':' CADEIA;
+out: SAIDA':' CADEIA;
+modify: ( cut | speed | subtitle);
+
+cut: CORTAR':' corpo_cortar;
+corpo_cortar: INICIO TEMPO FIM TEMPO;
+
+speed: ACELERAR':' corpo_acelerar;
+corpo_acelerar: VELOCIDADE NUM_INT AUDIO ('Y' | 'N');
+
+subtitle: LEGENDA':' CADEIA;

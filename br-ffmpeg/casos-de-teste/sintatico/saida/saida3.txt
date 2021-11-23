@@ -1,0 +1,3 @@
+'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
+Linha 4: Apenas um arquivo de entrada/saida ou legenda
+Fim da compilacao

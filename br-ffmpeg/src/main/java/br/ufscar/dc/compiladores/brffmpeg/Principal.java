@@ -6,53 +6,37 @@
 package br.ufscar.dc.compiladores.brffmpeg;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.Token;
-
+import org.antlr.v4.runtime.CommonTokenStream;
 /**
  *
  * @author donde
  */
 public class Principal {
+    
      public static void main(String args[]) throws IOException {
-        
-        CharStream cs = CharStreams.fromFileName(args[0]);
-        
-        BRFF lex = new BRFF(cs);
-        
-        Token token = null;
-        
-        try {
-            File out = new File(args[1]);
-        } catch (Exception e) {
-            System.out.println("Arquivo de saída nao pode ser criado");
-        }
-        
-        try {
-            FileWriter fw = new FileWriter(args[1]);
-            SAIDA:
-            while ((token = lex.nextToken()).getType() != Token.EOF) {
-                String tipo = BRFF.VOCABULARY.getDisplayName(token.getType());
-                String valor = token.getText();
+         try(PrintWriter pw = new PrintWriter(new File(args[1]))){
+            
+            CharStream cs = CharStreams.fromFileName(args[0]);
+            BRFFLexer lexer = new BRFFLexer(cs);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            BRFFParser parser = new BRFFParser(tokens);
+            
+            parser.removeErrorListeners();
+            ErrorListener error_listener = new ErrorListener(pw);
+            parser.addErrorListener(error_listener);
+            // Removendo Listener de erros do parser para dicionar o listener customizado
+            try{
+               parser.programa();                  
+            } catch(Exception e) {}
 
-                if(tipo.equals("ERRO")){
-                    fw.write("Linha " + token.getLine() + ": " + valor + " - simbolo nao identificado\n");
-                    break;
-                }
-                else if(tipo.equals("CADEIA_NAO_FECHADA")){
-                    fw.write("Linha " + token.getLine() + ": cadeia literal nao fechada\n");
-                    break;
-                }
-                else{
-                    fw.write("<'" + valor + "'," + tipo + ">\n");
-                }
-            }
-            fw.close();
-        } catch (IOException e) {
-            System.out.println("Erro de escrita no arquivo de saída");
+            //Ao fim da analise sintatica, exibe a mensagem padrão "Fim da compilacao"
+            pw.println("Fim da compilacao");
+            
         }
-    }
+    }       
 }
+

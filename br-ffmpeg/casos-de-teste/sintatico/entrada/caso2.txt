@@ -1,0 +1,8 @@
+//Erro no Z (deve ser N ou Y)
+    ENTRADA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
+    SAIDA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+    ACELERAR:
+        VELOCIDADE 5
+        AUDIO Z

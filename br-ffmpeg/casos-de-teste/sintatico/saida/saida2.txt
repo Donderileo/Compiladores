@@ -1,0 +1,3 @@
+Z
+Linha 8: erro sintatico proximo a Z
+Fim da compilacao
