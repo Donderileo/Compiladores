@@ -1,0 +1,11 @@
+<'ENTRADA','ENTRADA'>
+<':',':'>
+<''C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'',CADEIA>
+<'SAIDA','SAIDA'>
+<':',':'>
+<''C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'',CADEIA>
+<'CORTAR','CORTAR'>
+<':',':'>
+<'INICIO','INICIO'>
+<'00:00:00',TEMPO>
+Linha 9: , - simbolo nao identificado

@@ -1,0 +1,9 @@
+<'ENTRADA','ENTRADA'>
+<''C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'',CADEIA>
+<'SAIDA','SAIDA'>
+<''C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'',CADEIA>
+<'ACELERAR','ACELERAR'>
+<'VELOCIDADE','VELOCIDADE'>
+<'5',NUM_INT>
+<'AUDIO','AUDIO'>
+<'Y',IDENT>
