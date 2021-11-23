@@ -1,0 +1,3 @@
+<'ENTRADA','ENTRADA'>
+<':',':'>
+Linha 4: cadeia literal nao fechada

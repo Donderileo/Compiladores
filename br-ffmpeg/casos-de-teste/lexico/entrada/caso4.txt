@@ -1,0 +1,9 @@
+//Verifica erro na cadeia, cadeia não fechada
+
+ENTRADA:
+   'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4
+SAIDA:
+   'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+CORTAR:
+    INICIO 00:00:00
+    FIM 00:00:30

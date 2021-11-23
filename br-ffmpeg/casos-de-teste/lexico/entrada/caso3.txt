@@ -1,0 +1,6 @@
+    ENTRADA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
+    SAIDA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+    LEGENDA:
+       'C:\Users\donde\Compiladores\CompiladorFFMPEG\legenda.srt'
