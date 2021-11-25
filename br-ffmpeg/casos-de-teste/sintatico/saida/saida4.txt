@@ -1,3 +1,0 @@
-'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4
-Linha 3: cadeia nao fechada
-Fim da compilacao
