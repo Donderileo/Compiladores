@@ -24,15 +24,15 @@ ERRO: .;
 
 /* Sintatico */
 
-programa: in out modify* EOF;
-in: ENTRADA':' CADEIA;
-out: SAIDA':' CADEIA;
+programa: in out modify+ EOF;
+in: cmd=ENTRADA':' path=CADEIA;
+out: cmd=SAIDA':' path=CADEIA;
 modify: ( cut | speed | subtitle);
 
 cut: CORTAR':' corpo_cortar;
-corpo_cortar: INICIO TEMPO FIM TEMPO;
+corpo_cortar: INICIO start_time=TEMPO FIM finish_time=TEMPO;
 
 speed: ACELERAR':' corpo_acelerar;
-corpo_acelerar: VELOCIDADE NUM_INT AUDIO ('Y' | 'N');
+corpo_acelerar: VELOCIDADE vel=NUM_INT AUDIO option=('Y' | 'N');
 
-subtitle: LEGENDA':' CADEIA;
+subtitle: LEGENDA':' path=CADEIA;

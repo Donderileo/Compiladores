@@ -1,0 +1,3 @@
+Lexico OK
+Sintatico OK
+Semantico OK

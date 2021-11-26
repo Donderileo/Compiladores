@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package br.ufscar.dc.compiladores.brffmpeg;
-
+import br.ufscar.dc.compiladores.brffmpeg.BRFFParser.ProgramaContext;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,7 +21,8 @@ public class Principal {
     static CharStream cs;
     static BRFFLexer lexer;
     static BRFFParser parser;
-    
+    static BRFFSemantico semantico;
+    static CommonTokenStream tokens;
     
     public static void main(String args[]) throws IOException {
         pw = new PrintWriter(new File(args[1]));
@@ -29,13 +30,19 @@ public class Principal {
             pw.println("Lexico OK");
             if(sintatico(args[0])){
                pw.println("Sintatico OK");
+               if(semantico(args[0])){
+                   pw.println("Semantico OK");
+               }
+               else{
+                   pw.println("Erro Semantico");
+               }
             }
             else{
                pw.println("Erro Sintatico");
             }
         }
         else{
-            pw.println("Erro Léxico");
+            pw.println("Erro Lexico");
         }
         pw.close();
     }
@@ -63,9 +70,9 @@ public class Principal {
             else if(tipo.equals("CADEIA_NAO_FECHADA")){
                 return false;
             }
-            else{
-                pw.println("<'" + valor + "'," + tipo + ">\n");
-            }
+            //else{
+            //    pw.println("<'" + valor + "'," + tipo + ">\n");
+            //}
         }
         return true;
      }
@@ -87,5 +94,24 @@ public class Principal {
             return false;
         }
      }
+     
+     static boolean semantico(String saida) throws IOException{
+        cs = CharStreams.fromFileName(saida);
+        lexer = new BRFFLexer(cs);
+        tokens = new CommonTokenStream(lexer);
+        parser = new BRFFParser(tokens);
+        ProgramaContext arvore = parser.programa();
+        semantico = new BRFFSemantico();
+        semantico.visitPrograma(arvore);
+        if(BRFFSemanticoUtils.errosSemanticos.isEmpty()){
+            return true; 
+        }
+        BRFFSemanticoUtils.errosSemanticos.forEach((erro) -> pw.write(erro + '\n'));
+        pw.write("Fim da compilacao\n");
+        pw.close();
+        
+        return false;
+             
+    }
 }
 

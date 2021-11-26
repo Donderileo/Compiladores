@@ -10,17 +10,7 @@
 
 <''C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'',CADEIA>
 
-<'CORTAR','CORTAR'>
-
-<':',':'>
-
-<'INICIO','INICIO'>
-
-<'00:00:00',TEMPO>
-
-<'FIM','FIM'>
-
-<'00:00:30',TEMPO>
-
 Lexico OK
-Sintatico OK
+<EOF>
+Linha 5: erro sintatico proximo a <EOF>
+Erro Sintatico

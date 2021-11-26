@@ -1,0 +1,7 @@
+//Erro na duplicação de arquivos de entrada   
+    ENTRADA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\inputt.mp4'
+    SAIDA:
+        'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+    LEGENDA:
+       'C:\Users\donde\Compiladores\CompiladorFFMPEG\legenda.srt'

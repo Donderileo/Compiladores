@@ -1,0 +1,4 @@
+Lexico OK
+Sintatico OK
+Linha 9: ACELERAR não pode ser 0
+Fim da compilacao

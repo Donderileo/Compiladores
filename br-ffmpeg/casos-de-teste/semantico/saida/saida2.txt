@@ -1,0 +1,4 @@
+Lexico OK
+Sintatico OK
+ACELERAR já declarado
+Fim da compilacao

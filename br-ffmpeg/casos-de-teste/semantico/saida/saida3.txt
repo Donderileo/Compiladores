@@ -1,0 +1,4 @@
+Lexico OK
+Sintatico OK
+Linha 3: O arquivo nao existe
+Fim da compilacao

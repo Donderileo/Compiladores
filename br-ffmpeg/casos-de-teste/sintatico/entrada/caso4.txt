@@ -1,0 +1,4 @@
+ENTRADA:
+   'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
+SAIDA:
+   'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
