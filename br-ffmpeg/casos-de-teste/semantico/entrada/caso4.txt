@@ -1,3 +1,4 @@
+//Velocidade não pode ser 0.
 ENTRADA:
    'C:\Users\donde\Compiladores\brffmpeg\input.mp4'
 SAIDA:

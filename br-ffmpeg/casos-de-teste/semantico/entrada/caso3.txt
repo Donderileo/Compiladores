@@ -1,6 +1,7 @@
-//Erro na duplicação de arquivos de entrada   
+//Erro existencia da entrada   
     ENTRADA:
         'C:\Users\donde\Compiladores\brffmpeg\inputt.mp4'
+        
     SAIDA:
         'C:\Users\donde\Compiladores\brffmpeg\output.mp4'
     LEGENDA:
