@@ -28,19 +28,10 @@ public class Principal {
     public static void main(String args[]) throws IOException {
         pw = new PrintWriter(new File(args[1]));
         if(lexico(args[0])){
-            //pw.println("Lexico OK");
             if(sintatico(args[0])){
-               //pw.println("Sintatico OK");
                if(semantico(args[0])){
-                   //pw.println("Semantico OK");
                    geradorFFMPEG(args[0]);
                }
-               else{
-                   //pw.println("Erro Semantico");
-               }
-            }
-            else{
-               //pw.println("Erro Sintatico");
             }
         }
         else{
@@ -49,7 +40,7 @@ public class Principal {
         pw.close();
     }
     
-     static boolean lexico(String file) throws IOException{
+    static boolean lexico(String file) throws IOException{
         cs = CharStreams.fromFileName(file);
         lexer = new BRFFLexer(cs);
 
@@ -72,9 +63,7 @@ public class Principal {
             else if(tipo.equals("CADEIA_NAO_FECHADA")){
                 return false;
             }
-            //else{
-            //    pw.println("<'" + valor + "'," + tipo + ">\n");
-            //}
+           
         }
         return true;
      }

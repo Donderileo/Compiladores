@@ -40,11 +40,15 @@ public class GeradorFFMPEG extends BRFFBaseVisitor<Void>{
     public Void visitPrograma(BRFFParser.ProgramaContext ctx) { 
         
         //Percorre a árvore salvando as informações.
+        
+        /* Salvamos informações de quais modificadores vão existir e quantos */
+        
         super.visitPrograma(ctx);
         String saida_orig = tabela.getCadeia("SAIDA");
         String arquivo_temp = "temp.mp4";
 
-        
+        //Caso tenha o comando de cortar, escreve o comando, olhando sempre se existe
+        //um comando que sucede este, para criar um arquivo temporário de saida
         if(tem_cut){
             saida.append("ffmpeg");
             saida.append(" -ss " + tabela.getValor("TEMPO_INICIO"));
@@ -58,6 +62,8 @@ public class GeradorFFMPEG extends BRFFBaseVisitor<Void>{
             }
         }
         
+        //Caso tenha acelerar, verificamos se já existiu o comando cut para concatenar
+        // os comandos, sempre verificando se é necessário um arquivo temporário.
         if(tem_speed){
             if(tem_cut){
                saida.append(" && ");
@@ -93,6 +99,8 @@ public class GeradorFFMPEG extends BRFFBaseVisitor<Void>{
             }
         }
         
+        // No último modificador, verificamos os anteriores e escrevemos na saída original
+        // não sendo necessária a verificação.
         if(tem_sub){
              if(tem_cut || tem_speed){
                saida.append(" && ");

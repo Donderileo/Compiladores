@@ -1,7 +1,7 @@
 grammar BRFF;
 
 WS: ( ' ' | '\t' | '\r' | '\n' ) -> skip;
-
+/* Aqui definimos todos os comandos */
 ENTRADA: 'ENTRADA';
 SAIDA: 'SAIDA';
 CORTAR: 'CORTAR';
