@@ -1,8 +1,8 @@
 //Erro na duplicação de arquivos de entrada   
     ENTRADA:
-        'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
-        'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'
+        'C:\Users\donde\Compiladores\brffmpeg\input.mp4'
+        'C:\Users\donde\Compiladores\brffmpeg\input.mp4'
     SAIDA:
-        'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+        'C:\Users\donde\Compiladores\brffmpeg\output.mp4'
     LEGENDA:
-       'C:\Users\donde\Compiladores\CompiladorFFMPEG\legenda.srt'
+       'C:\Users\donde\Compiladores\brffmpeg\legenda.srt'

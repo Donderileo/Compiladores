@@ -1,4 +1,4 @@
 Lexico OK
 Sintatico OK
 Semantico OK
-ffmpeg -ss 00:00:00 -i 'C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4' -to 00:00:30 -c copy 'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
+ffmpeg -ss 00:00:00 -i 'C:\Users\donde\Compiladores\brffmpeg\input.mp4' -to 00:00:30 -c copy 'C:\Users\donde\Compiladores\brffmpeg\output.mp4'
