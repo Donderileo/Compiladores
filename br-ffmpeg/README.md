@@ -1,15 +1,15 @@
 # Compilador texto -> comando FFMPEG.
 
-Este compilador fará a tradução de um comando em texto para o comando específico do programa FFMPEG
+Dada a dificuldade de escrever comandos FFMPEG, o brffmpeg tem uma linguagem simples que é compilada para a linha de comando e irá efetivamente editar o vídeo.
 
-Funções disponíveis:
+Disponibiliza-se possíveis comandos: 
+
 * Cortar
 * Acelerar / Desacelerar
 * Legendar
 
 Terá as seguintes validações:
 * Ao menos uma função de alteração.
-* Tempos de corte Inicio < Fim.
 * Sempre possuir arquivo de entrada e saída.
 * Nome de funções / Declarações.
 
@@ -86,3 +86,23 @@ AUDIO N -> Remove o áudio
  ffmpeg -i C:\Users\donde\Compiladores\br-ffmpeg\input.mp4 -i C:\Users\donde\Compiladores\br-ffmpeg\legenda.srt -map 0 -map 1 -c copy -c:s mov_text C:\Users\donde\Compiladores\br-ffmpeg\output.mp4
 ```
 
+## Para compilar:
+
+Utilize o comando build de sua IDE de preferência ou siga o passo a passo apontados nestes textos:
+
+[[Maven] Compilando com o Plugin Compiler do Maven](
+https://medium.com/@andgomes/compilando-com-o-plugin-compiler-do-maven-13c4afe12858)
+
+[Processo de build com o Maven](https://blog.caelum.com.br/processo-de-build-com-o-maven/amp/)
+
+---
+
+## Para executá-lo:
+
+Com o projeto compilado na pasta target, com o arquivo em formato jar que pode ser executado com o seguinte comando:
+
+```sh
+    $ java -jar target/brffmpeg-1.0-SNAPSHOT-jar-with-dependencies.jar entrada.txt saida.txt
+```
+
+#### É esperado que o arquivo de entrada possua um código seguindo o padrão descrito anteriormente, para que no arquivo de saída seja gerado o comando ffmpeg.
