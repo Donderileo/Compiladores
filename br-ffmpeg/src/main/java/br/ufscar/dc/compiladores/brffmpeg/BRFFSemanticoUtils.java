@@ -26,5 +26,6 @@ public class BRFFSemanticoUtils {
 
        errosSemanticos.add(String.format(mensagem));
    }
+    
 }
 

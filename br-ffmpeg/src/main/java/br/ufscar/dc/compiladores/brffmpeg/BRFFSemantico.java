@@ -47,7 +47,7 @@ public class BRFFSemantico extends BRFFBaseVisitor<Void>{
         }
         else{
             tabela.add_cmd_valor("INICIO",ctx.start_time.getText());
-            tabela.add_cmd_valor("FIM",ctx.start_time.getText());
+            tabela.add_cmd_valor("FIM",ctx.finish_time.getText());
         }
         return visitChildren(ctx); 
     }   

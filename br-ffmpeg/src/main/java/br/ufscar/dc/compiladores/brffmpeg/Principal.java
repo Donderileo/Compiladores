@@ -22,23 +22,25 @@ public class Principal {
     static BRFFLexer lexer;
     static BRFFParser parser;
     static BRFFSemantico semantico;
+    static GeradorFFMPEG gerador;
     static CommonTokenStream tokens;
     
     public static void main(String args[]) throws IOException {
         pw = new PrintWriter(new File(args[1]));
         if(lexico(args[0])){
-            pw.println("Lexico OK");
+            //pw.println("Lexico OK");
             if(sintatico(args[0])){
-               pw.println("Sintatico OK");
+               //pw.println("Sintatico OK");
                if(semantico(args[0])){
-                   pw.println("Semantico OK");
+                   //pw.println("Semantico OK");
+                   geradorFFMPEG(args[0]);
                }
                else{
-                   pw.println("Erro Semantico");
+                   //pw.println("Erro Semantico");
                }
             }
             else{
-               pw.println("Erro Sintatico");
+               //pw.println("Erro Sintatico");
             }
         }
         else{
@@ -95,8 +97,8 @@ public class Principal {
         }
      }
      
-     static boolean semantico(String saida) throws IOException{
-        cs = CharStreams.fromFileName(saida);
+     static boolean semantico(String file) throws IOException{
+        cs = CharStreams.fromFileName(file);
         lexer = new BRFFLexer(cs);
         tokens = new CommonTokenStream(lexer);
         parser = new BRFFParser(tokens);
@@ -112,6 +114,17 @@ public class Principal {
         
         return false;
              
+    }
+     
+      static void geradorFFMPEG(String file) throws IOException{
+        gerador = new GeradorFFMPEG();
+        cs = CharStreams.fromFileName(file);
+        lexer = new BRFFLexer(cs);
+        tokens = new CommonTokenStream(lexer);
+        parser = new BRFFParser(tokens);
+        ProgramaContext arvore = parser.programa();
+        gerador.visitPrograma(arvore);
+        pw.write(gerador.saida.toString()); 
     }
 }
 

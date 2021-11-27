@@ -1,5 +1,1 @@
-<'ENTRADA','ENTRADA'>
-
-<':',':'>
-
 Erro Lexico

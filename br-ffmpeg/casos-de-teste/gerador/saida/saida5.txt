@@ -1,0 +1,1 @@
+ffmpeg -ss 00:00:00 -i C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4 -to 00:00:30 -c copy temp.mp4 && ffmpeg -i temp.mp4 -vf "setpts=0.5*PTS" -an C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4 && del temp.mp4

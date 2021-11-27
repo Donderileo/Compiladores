@@ -3,3 +3,4 @@ java -jar target/brffmpeg-1.0-SNAPSHOT-jar-with-dependencies.jar casos-de-teste/
 java -jar target/brffmpeg-1.0-SNAPSHOT-jar-with-dependencies.jar casos-de-teste/semantico/entrada/caso3.txt casos-de-teste/semantico/saida/saida3.txt
 java -jar target/brffmpeg-1.0-SNAPSHOT-jar-with-dependencies.jar casos-de-teste/semantico/entrada/caso4.txt casos-de-teste/semantico/saida/saida4.txt
 
+

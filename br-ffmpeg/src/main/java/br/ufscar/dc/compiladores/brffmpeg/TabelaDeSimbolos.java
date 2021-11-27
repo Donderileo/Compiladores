@@ -28,17 +28,27 @@ public class TabelaDeSimbolos {
          EntradaTabelaDeSimbolos eta = new EntradaTabelaDeSimbolos();
          eta.comando = comando;
          eta.cadeia = cadeia;
+        tabela.put(comando, eta);
+
      }
      
      
      public void add_cmd_valor(String comando, String valor){
          EntradaTabelaDeSimbolos eta = new EntradaTabelaDeSimbolos();
          eta.comando = comando;
-         eta.cadeia = valor;
+         eta.valor = valor;
          tabela.put(comando, eta);
      }
      
      public boolean existe(String nome){
         return tabela.containsKey(nome);
+    }
+     
+    public String getCadeia(String nome){
+        return tabela.get(nome).cadeia;
+    }
+    
+     public String getValor(String nome){
+        return tabela.get(nome).valor;
     }
 }

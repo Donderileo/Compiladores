@@ -1,16 +1,2 @@
-<'ENTRADA','ENTRADA'>
-
-<':',':'>
-
-<''C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'',CADEIA>
-
-<'SAIDA','SAIDA'>
-
-<':',':'>
-
-<''C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'',CADEIA>
-
-Lexico OK
 <EOF>
 Linha 5: erro sintatico proximo a <EOF>
-Erro Sintatico

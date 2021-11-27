@@ -1,0 +1,1 @@
+ffmpeg -i C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4 -vf "setpts=0.5*PTS" -an C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4

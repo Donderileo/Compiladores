@@ -3,5 +3,5 @@ ENTRADA:
 SAIDA:
     'C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'
 ACELERAR:
-    VELOCIDADE 5
-    AUDIO Y
+    VELOCIDADE 2
+    AUDIO N

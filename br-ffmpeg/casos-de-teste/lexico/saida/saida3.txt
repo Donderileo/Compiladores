@@ -1,20 +1,4 @@
-<'ENTRADA','ENTRADA'>
-
-<':',':'>
-
-<''C:\Users\donde\Compiladores\CompiladorFFMPEG\input.mp4'',CADEIA>
-
-<'SAIDA','SAIDA'>
-
-<':',':'>
-
-<''C:\Users\donde\Compiladores\CompiladorFFMPEG\output.mp4'',CADEIA>
-
-<'LEGENDA','LEGENDA'>
-
-<':',':'>
-
-<''C:\Users\donde\Compiladores\CompiladorFFMPEG\legenda.srt'',CADEIA>
-
 Lexico OK
 Sintatico OK
+Semantico OK
+ffmpeg
